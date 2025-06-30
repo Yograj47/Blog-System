@@ -26,12 +26,8 @@ const BlogSchema = new mongoose.Schema(
       trim: true,
       maxlength: [50, "Category cannot exceed 50 characters"],
     },
-    date: {
-      type: Date,
-      default: Date.now,
-    },
   },
-  { timestamps }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Blog", BlogSchema);

@@ -6,6 +6,9 @@ const PORT = 3000;
 const app = express();
 const connectionDb = require("./config/Connection");
 
+// Middleware
+app.use(express.json());
+
 //routes
 const blogRoutes = require("./routes/blog");
 app.get("/", (req, res) => {
