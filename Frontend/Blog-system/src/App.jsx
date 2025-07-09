@@ -1,15 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import BlogPage from "./pages/blogPage";
-import TestForm from './pages/Test';
-import './css/home.css';
-import './css/navbar.css';
-import './css/blogPage.css';
+import Blog from './pages/Blog';
+import BlogPage from "./pages/BlogDetailPage";
 
 const router = createBrowserRouter([
+
+  // Home path
   {
     path: "/",
     element: (
@@ -19,24 +16,8 @@ const router = createBrowserRouter([
       </>
     ),
   },
-  {
-    path: "/contact",
-    element: (
-      <>
-        <NavBar />
-        <Contact />
-      </>
-    ),
-  },
-  {
-    path: "/about",
-    element: (
-      <>
-        <NavBar />
-        <About />
-      </>
-    ),
-  },
+
+  // Dynamic path seperate for each blog
   {
     path: "/blog/:blogId",
     element: (
@@ -46,15 +27,19 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
+  // All the blogs 
   {
-    path: "/test",
+    path: "/blogs",
     element: (
       <>
         <NavBar />
-        <TestForm />
+        <Blog />
       </>
     ),
   },
+
+  // Page not found
   {
     path: "*",
     element: (

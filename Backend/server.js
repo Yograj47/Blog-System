@@ -16,12 +16,8 @@ app.use(
   })
 );
 
-
 //routes
 const blogRoutes = require("./routes/blog");
-app.get("/", (req, res) => {
-  res.status(200).send("Home");
-});
 
 app.use("/api/blogs", blogRoutes);
 

@@ -1,15 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   /* Base Colors */
-  --color-bg: #f8f9fa;           /* Soft Light Gray */
-  --color-text: #2e2e2e;         /* Near-Black but Softer */
-  --color-heading: #1c1c1c;      /* Deeper but not harsh */
-  --color-border: #919191;       /* Subtle light gray border */
+  --color-bg: #f8f9fa; /* Soft Light Gray */
+  --color-text: #2e2e2e; /* Near-Black but Softer */
+  --color-heading: #1c1c1c; /* Deeper but not harsh */
+  --color-border: #919191; /* Subtle light gray border */
 
   /* Accent Colors */
-  --color-primary: #3f7dfd;      /* Vibrant Indigo-Blue */
+  --color-primary: #3f7dfd; /* Vibrant Indigo-Blue */
   --color-primary-dark: #2c5edb; /* Stronger Blue for Hover */
-  --color-secondary: #ffffff;    /* Clean White */
+  --color-secondary: #ffffff; /* Clean White */
 
   /* Button Colors */
   --color-btn-bg: var(--color-primary);
@@ -17,15 +16,14 @@
   --color-btn-hover: var(--color-primary-dark);
 
   /* Category Colors (Modern pastel-inspired) */
-  --color-tech: #5b9eff;         /* Calmer Blue */
-  --color-life: #4bc982;         /* Soft Green */
-  --color-others: #ffc75f;       /* Warm Yellow-Orange */
+  --color-tech: #5b9eff; /* Calmer Blue */
+  --color-life: #4bc982; /* Soft Green */
+  --color-others: #ffc75f; /* Warm Yellow-Orange */
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Global Styles */
 /* Reset some default styles */
@@ -33,18 +31,119 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: var(--color-text);
-  background-color: var(--color-secondary);
   list-style: none;
   border: none;
   outline: none;
   text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body,
 html {
   height: 100vh;
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* Blog Card */
+.blog-card {
+  width: 100%;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-secondary);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 6px;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.blog-card__link {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card__image {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.blog-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.blog-card__meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card__date {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.blog-card__date::after {
+  content: "•";
+  position: absolute;
+  right: -1rem;
+  color: var(--color-primary);
+}
+
+.blog-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.blog-card__description {
+  font-size: 1rem;
+  color: var(--color-text);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.blog-card__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.75rem;
+}
+
+.blog-card__views,
+.blog-card__comments,
+.blog-card__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.blog-card__likes svg {
+  color: #e84a43;
 }

@@ -1,141 +1,85 @@
+/* --Hero Section-- */
+/* --Hero Section-- */
 #hero {
-    height: 400px;
-    width: 100%;
-    background: var(--color-secondary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 500px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8) url(../assets/other/hero.jpg);
+  background-blend-mode: hue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #hero h1 {
-    font-size: 2.5rem;
-    color: var(--color-heading);
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Category Section */
-.category-section {
-    text-align: center;
-    margin: 20px 0;
+/* --Spacing Block-- */
+.hero-spacer {
+  height: 150px;
+  width: 100%;
+  background-color: #fff;
 }
 
-.category-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+/* --Main Grid Layout-- */
+.home-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.category-list li a {
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
-    padding: 5px 10px;
-    border-radius: 4px;
-    text-decoration: none;
+/* --Blog Section Styling (nested inside Blog component)-- */
+.blog__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.category-list li a:hover {
-    background-color: var(--color-primary-dark);
+.blog__box .heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 2rem;
 }
 
-/* Blog Listing */
-.blog-listing {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+.blog__listing {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 }
 
-.blog-item {
-    background-color: var(--color-background);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    transition: transform 0.3s ease;
+.more__post_btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  font-size: 1.1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.blog-item:hover {
-    transform: scale(1.02);
+.more__post_btn a {
+  color: var(--color-btn-text);
 }
 
-/* Category Tag */
-.category-tag {
-    padding: 4px 8px;
-    background-color: var(--color-others);
-    color: var(--color-secondary);
-    border-radius: 4px;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    display: inline-block;
+.more__post_btn:hover {
+  background-color: var(--color-primary-dark);
+  cursor: pointer;
 }
 
-/* Blog Image */
-.blog-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Blog Content */
-.blog-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 8px 0;
-}
-
-.blog-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.blog-description {
-    font-size: 0.9rem;
-    color: var(--color-text);
-}
-
-.blog-author {
-    font-size: 0.9rem;
-    color: var(--color-text);
-    align-self: flex-end;
-    font-style: italic;
-    position: relative;
-}
-
-.blog-author::before {
-    content: "~ ";
-}
-.blog-author::after {
-    content: " ~";
-}
-
-/* Read More Button */
-.read-more {
-    align-self: flex-start;
-    margin-top: 10px;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    padding: 6px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    position: relative;
-}
-
-.read-more::after {
-    content: "\2192";
-    margin-left: 6px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.read-more:hover {
-    background-color: var(--color-primary-dark);
-}
-
-.read-more:hover::after {
-    opacity: 1;
+/* --Sidebar (Right column)-- */
+.sidebar {
+  border: 2px solid black;
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  text-align: center;
+  color: var(--color-text);
 }

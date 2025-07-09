@@ -1,129 +1,162 @@
-/* Navbar Container */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 24px;
-    background-color: var(--color-secondary);
-    box-shadow: var(--shadow-md);
-    margin-bottom: 0.5rem;
-    gap: 1rem;
+@import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
+
+/* Header Wrapper */
+.header {
+  width: 100%;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Brand Section */
-.nav__brand a {
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    color: var(--color-heading);
-    text-decoration: none;
-    word-spacing: 0.3em;
+/* Brand Logo */
+.brand__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.brand__name {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-heading);
+  font-family: "Aladin", system-ui;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav Container */
+.nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
 }
 
 /* Menu Links */
 .nav__menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  position: sticky;
 }
 
 .nav__links {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav__link {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--color-text);
-    text-decoration: none;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav__link:hover {
-    color: var(--color-primary);
-    background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Right Side */
+/* Right Side Controls */
 .nav__right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Search Bar */
 .nav__search {
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid var(--color-border);
-    padding: 4px 10px;
-    background-color: #fff;
-    position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-border);
+  background-color: #fff;
+  padding: 4px 10px;
+  position: relative;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
 }
 
-.nav__search::after {
-    content: '';
-    position: absolute;
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: var(--color-border);
+.nav__search:hover {
+  border-color: var(--color-primary);
 }
 
 .nav__search input {
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    background-color: transparent;
-    padding: 4px;
-    width: 160px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  padding: 4px;
+  width: 160px;
+  transition: transform 0.2s ease;
+}
+
+.nav__search input:focus {
+  transform: scale(1.05);
 }
 
 .nav__search button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
 }
 
 .nav__search-icon {
-    font-size: 1.1rem;
-    color: var(--color-text);
+  font-size: 1.1rem;
+  color: var(--color-text);
 }
 
 /* Action Buttons */
 .nav__actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav__btn {
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.4rem 1rem;
-    border: 2px solid var(--color-border);
-    border-radius: 12px;
-    color: var(--color-text);
-    transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
 }
 
 .nav__btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
 }
 
 .nav__btn--primary {
-    background-color: var(--color-primary);
-    color: var(--color-btn-text);
-    border: none;
+  background-color: var(--color-primary);
+  color: var(--color-btn-text);
+  border: none;
+}
+
+.nav__btn--primary:hover {
+  opacity: 0.9;
+}
+
+.nav__btn--secondary:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-text);
+  border-color: var(--color-primary-dark);
 }
