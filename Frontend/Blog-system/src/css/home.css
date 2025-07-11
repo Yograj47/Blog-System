@@ -37,37 +37,47 @@
 }
 
 /* --Blog Section Styling (nested inside Blog component)-- */
+/* Blog Section Container */
 .blog__box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Blog Heading */
 .blog__box .heading {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: var(--color-heading);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
+/* Blog Listing Layout */
 .blog__listing {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   width: 100%;
 }
 
+/* More Posts Button */
 .more__post_btn {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
+  margin-top: 2rem;
   background-color: var(--color-primary);
-  font-size: 1.1rem;
-  border-radius: 6px;
-  transition: background-color 0.2s ease-in-out;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease;
 }
 
 .more__post_btn a {
   color: var(--color-btn-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .more__post_btn:hover {

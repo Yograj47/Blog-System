@@ -34,7 +34,7 @@ const getAllBlogs = async (req, res) => {
  */
 const getLatestBlogs = async (req, res) => {
   try {
-    const blogs = await blog.find().sort({ createdAt: -1 }).limit(3);
+    const blogs = await blog.find().sort({ createdAt: -1 }).limit(4);
 
     res.status(200).json({
       success: true,
@@ -55,10 +55,10 @@ const getLatestBlogs = async (req, res) => {
  */
 const createBlog = async (req, res) => {
   try {
-    const expense = await blog.create(req.body);
+    const blog = await blog.create(req.body);
     res.status(201).json({
       success: true,
-      data: expense,
+      data: blog,
       message: "Blog created successfully",
     });
   } catch (error) {

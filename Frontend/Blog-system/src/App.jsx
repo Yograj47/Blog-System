@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Blog from './pages/Blog';
 import BlogPage from "./pages/BlogDetailPage";
+import About from './pages/AboutPage';
+import Contact from './pages/Contact';
 
 const router = createBrowserRouter([
 
@@ -13,6 +15,24 @@ const router = createBrowserRouter([
       <>
         <NavBar />
         <Home />
+      </>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <>
+        <NavBar />
+        <About />
+      </>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <>
+        <NavBar />
+        <Contact />
       </>
     ),
   },

@@ -18,8 +18,10 @@ app.use(
 
 //routes
 const blogRoutes = require("./routes/blog");
+const contactRoutes = require("./routes/contact");
 
 app.use("/api/blogs", blogRoutes);
+app.use("/api/contact", contactRoutes);
 
 const start = async () => {
   try {
